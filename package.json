@@ -1,0 +1,18 @@
+{
+  "name": "the-dev-hoster-pro",
+  "version": "1.0.0",
+  "description": "White-label hosting dashboard: GitHub OAuth sign-in, one-click repo deployments, automatic uptime monitoring. Powered invisibly by Render + UptimeRobot under the platform owner's keys.",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2"
+  }
+}
