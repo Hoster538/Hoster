@@ -1,0 +1,31 @@
+# THE DEV HOSTER PRO — Render Blueprint
+# Render dashboard → New + → Blueprint → apna repo select karo.
+# sync:false waali values Render tumse deploy ke waqt hi maangega
+# (unhe yahan paste karne ki zaroorat nahi — keys dashboard mein hi dalengi).
+services:
+  - type: web
+    name: dev-hoster-pro
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GITHUB_CLIENT_ID
+        sync: false
+      - key: GITHUB_CLIENT_SECRET
+        sync: false
+      - key: RENDER_API_KEY
+        sync: false
+      - key: UPTIMEROBOT_API_KEY
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: MAX_DEPLOYMENTS_PER_USER
+        value: "3"
+      # BASE_URL ki zaroorat nahi — Render ka RENDER_EXTERNAL_URL khud use ho jata hai.
+      # Custom domain lagao to wahi domain yahan set karo.
